@@ -1,12 +1,12 @@
-export function flattenMessages(nestedMessages: any, prefix = '') {
-  return Object.keys(nestedMessages).reduce((messages: any, key) => {
+export function flattenMessages(nestedMessages: Record<string, unknown>, prefix = ''): Record<string, string> {
+  return Object.keys(nestedMessages).reduce((messages: Record<string, string>, key) => {
     const value = nestedMessages[key];
     const prefixedKey = prefix ? `${prefix}.${key}` : key;
 
     if (typeof value === 'string') {
       messages[prefixedKey] = value;
-    } else {
-      Object.assign(messages, flattenMessages(value, prefixedKey));
+    } else if (typeof value === 'object' && value !== null) {
+      Object.assign(messages, flattenMessages(value as Record<string, unknown>, prefixedKey));
     }
 
     return messages;
