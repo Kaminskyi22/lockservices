@@ -36,7 +36,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900"
         >
           {messages.services.title}
         </motion.h2>
@@ -46,7 +46,7 @@ export default function Services() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
           {messages.services.items.map((service, index) => {
             const Icon = icons[service.icon as keyof typeof icons];
@@ -55,15 +55,15 @@ export default function Services() {
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col items-center"
               >
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Icon className="text-3xl text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-3">
+                <h3 className="text-xl font-semibold text-center mb-3 text-gray-900">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-800 text-center">
                   {service.description}
                 </p>
               </motion.div>
