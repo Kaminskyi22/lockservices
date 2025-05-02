@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { FaPhone, FaKey, FaLock, FaShieldAlt } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 const floatingIcons = [
   { Icon: FaKey, x: '20%', y: '20%', delay: 0 },
@@ -13,8 +14,25 @@ const floatingIcons = [
   { Icon: FaShieldAlt, x: '85%', y: '60%', delay: 2.5 },
 ];
 
+const START_DATE = new Date('2024-05-01T00:00:00Z'); // дата старту лічильника
+const START_COUNT = 0; // початкове значення
+function getCurrentCount() {
+  const now = new Date();
+  const diffMs = now.getTime() - START_DATE.getTime();
+  const diffMinutes = Math.floor(diffMs / 1000 / 60);
+  return START_COUNT + Math.floor(diffMinutes / 7);
+}
+
 export default function Hero() {
   const { messages } = useTranslation();
+  const [count, setCount] = useState(getCurrentCount());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount(getCurrentCount());
+    }, 60 * 1000); // оновлювати кожну хвилину
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -87,6 +105,9 @@ export default function Hero() {
               <span className="text-white">Service</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
+            <div className="mt-4 text-lg md:text-2xl font-semibold text-white drop-shadow-lg">
+              Відкрито замків: <span className="text-yellow-300">{count}</span>
+            </div>
           </motion.div>
 
           <motion.div

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { FaStar } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,8 +20,23 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
+function shuffleArray<T>(array: ReadonlyArray<T>): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 export default function Testimonials() {
   const { messages } = useTranslation();
+  const [shuffled, setShuffled] = useState(() => shuffleArray(messages.testimonials.items));
+
+  useEffect(() => {
+    setShuffled(shuffleArray(messages.testimonials.items));
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <section className="py-20 bg-gray-50">
@@ -41,7 +57,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {messages.testimonials.items.map((testimonial, index) => (
+          {shuffled.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={item}
