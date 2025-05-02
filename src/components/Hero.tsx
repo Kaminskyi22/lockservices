@@ -137,14 +137,14 @@ export default function Hero() {
           </p>
           
           <motion.a
-            href="tel:+380932851411"
+            href={`tel:${messages.contact.phone}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-colors shadow-lg relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/30 to-blue-500/0 group-hover:translate-x-full transition-transform duration-500" />
             <FaPhone className="text-xl relative z-10" />
-            <span className="relative z-10">+380 93 285 14 11</span>
+            <span className="relative z-10">{messages.contact.phone}</span>
           </motion.a>
         </motion.div>
       </div>
