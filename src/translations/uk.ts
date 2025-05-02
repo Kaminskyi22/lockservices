@@ -138,7 +138,7 @@ export const uk = {
   contact: {
     title: 'Зв\'яжіться з нами',
     subtitle: 'Ми завжди готові допомогти',
-    phone: '+380123456789',
+    phone: '+380 93 285 14 11',
     email: 'lockservice33000@gmail.com',
     address: 'м. Рівне',
     form: {

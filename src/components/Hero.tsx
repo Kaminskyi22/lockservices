@@ -15,7 +15,7 @@ const floatingIcons = [
 ];
 
 const START_DATE = new Date('2024-05-01T00:00:00Z'); // дата старту лічильника
-const START_COUNT = 7; // початкове значення
+const START_COUNT = 107; // початкове значення
 function getCurrentCount() {
   const now = new Date();
   const diffMs = now.getTime() - START_DATE.getTime();
