@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
+type FaqItem = { question: string; answer: string };
+
 export default function FAQ() {
   const { messages } = useTranslation();
   const [open, setOpen] = useState<number | null>(null);
@@ -17,7 +19,7 @@ export default function FAQ() {
             {messages.faq.title}
           </h2>
           <div className="space-y-4">
-            {messages.faq.items.map((item: any, idx: number) => (
+            {(messages.faq.items as unknown as FaqItem[]).map((item, idx) => (
               <div key={idx} className="border rounded-lg overflow-hidden bg-gray-50">
                 <button
                   className="w-full flex items-center justify-between px-6 py-4 text-left text-lg font-semibold text-gray-900 focus:outline-none focus:bg-blue-100 transition"

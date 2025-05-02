@@ -39,7 +39,7 @@ const Contact = () => {
       reset();
       alert(messages.contact.form.success);
       setTimeout(() => setUnlocked(false), 2000);
-    } catch (error) {
+    } catch {
       setStatus('error');
       setUnlocked(false);
       alert(messages.contact.form.error);
