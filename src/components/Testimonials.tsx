@@ -29,7 +29,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-black"
         >
           {messages.testimonials.title}
         </motion.h2>
@@ -62,7 +62,7 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">&quot;{testimonial.text}&quot;</p>
+              <p className="text-black italic">&quot;{testimonial.text}&quot;</p>
             </motion.div>
           ))}
         </motion.div>

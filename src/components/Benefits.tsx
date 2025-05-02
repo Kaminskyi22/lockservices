@@ -36,7 +36,7 @@ export default function Benefits() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-black"
         >
           {messages.benefits.title}
         </motion.h2>
@@ -60,10 +60,10 @@ export default function Benefits() {
                 <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <Icon className="text-4xl text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="text-xl font-semibold mb-4 text-black">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-black">
                   {benefit.description}
                 </p>
               </motion.div>
