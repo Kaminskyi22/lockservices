@@ -14,22 +14,37 @@ const floatingIcons = [
   { Icon: FaShieldAlt, x: '85%', y: '60%', delay: 2.5 },
 ];
 
-const START_DATE = new Date('2024-05-01T00:00:00Z'); // дата старту лічильника
 const START_COUNT = 107; // початкове значення
-function getCurrentCount() {
+const INCREMENT_MINUTES = 7;
+const STORAGE_KEY = 'lock_counter_start_date';
+
+function getStartDate() {
+  if (typeof window !== 'undefined') {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return new Date(saved);
+    const now = new Date();
+    localStorage.setItem(STORAGE_KEY, now.toISOString());
+    return now;
+  }
+  return new Date();
+}
+
+function getCurrentCount(startDate: Date) {
   const now = new Date();
-  const diffMs = now.getTime() - START_DATE.getTime();
+  const diffMs = now.getTime() - startDate.getTime();
   const diffMinutes = Math.floor(diffMs / 1000 / 60);
-  return START_COUNT + Math.floor(diffMinutes / 7);
+  return START_COUNT + Math.floor(diffMinutes / INCREMENT_MINUTES);
 }
 
 export default function Hero() {
   const { messages } = useTranslation();
-  const [count, setCount] = useState(getCurrentCount());
+  const [count, setCount] = useState(START_COUNT);
 
   useEffect(() => {
+    const startDate = getStartDate();
+    setCount(getCurrentCount(startDate));
     const interval = setInterval(() => {
-      setCount(getCurrentCount());
+      setCount(getCurrentCount(startDate));
     }, 60 * 1000); // оновлювати кожну хвилину
     return () => clearInterval(interval);
   }, []);

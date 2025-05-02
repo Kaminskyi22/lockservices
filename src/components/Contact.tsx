@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/contexts/TranslationContext';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLock, FaLockOpen } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
@@ -16,11 +16,12 @@ const Contact = () => {
   const { messages } = useTranslation();
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [unlocked, setUnlocked] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     try {
       setStatus('loading');
-      
+      setUnlocked(false);
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -34,11 +35,13 @@ const Contact = () => {
       }
 
       setStatus('success');
+      setUnlocked(true);
       reset();
-      
       alert(messages.contact.form.success);
+      setTimeout(() => setUnlocked(false), 2000);
     } catch (error) {
       setStatus('error');
+      setUnlocked(false);
       alert(messages.contact.form.error);
     }
   };
@@ -108,6 +111,15 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-gray-50 rounded-xl p-8"
           >
+            <div className="flex justify-center mb-4">
+              <motion.div
+                animate={{ rotate: unlocked ? 20 : 0 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 10 }}
+                className="text-4xl text-blue-600"
+              >
+                {unlocked ? <FaLockOpen /> : <FaLock />}
+              </motion.div>
+            </div>
             <h3 className="text-2xl font-semibold mb-6">
               {messages.contact.form.title}
             </h3>
