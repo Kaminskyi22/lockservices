@@ -30,13 +30,22 @@ export default function FAQ() {
                 {open === idx && (
                   <motion.div
                     key="content"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-4 text-gray-700"
+                    initial={{ height: 0, opacity: 0, y: -10 }}
+                    animate={{ height: 'auto', opacity: 1, y: 0 }}
+                    exit={{ height: 0, opacity: 0, y: -10 }}
+                    transition={{ duration: 0.35, ease: 'easeInOut' }}
+                    className="relative px-0"
                   >
-                    {item.answer}
+                    <div className="absolute left-0 top-0 h-full w-1 bg-blue-500 rounded-r" />
+                    <div className="pl-6 pr-6 pb-4 pt-2 bg-blue-50 text-gray-800">
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1, duration: 0.3 }}
+                      >
+                        {item.answer}
+                      </motion.div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
