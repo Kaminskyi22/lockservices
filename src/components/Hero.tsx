@@ -15,7 +15,7 @@ const floatingIcons = [
 ];
 
 const START_DATE = new Date('2024-05-01T00:00:00Z'); // дата старту лічильника
-const START_COUNT = 0; // початкове значення
+const START_COUNT = 7; // початкове значення
 function getCurrentCount() {
   const now = new Date();
   const diffMs = now.getTime() - START_DATE.getTime();
@@ -105,8 +105,12 @@ export default function Hero() {
               <span className="text-white">Service</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
-            <div className="mt-4 text-lg md:text-2xl font-semibold text-white drop-shadow-lg">
-              Відкрито замків: <span className="text-yellow-300">{count}</span>
+            <div className="mt-6 flex flex-col items-center justify-center">
+              <div className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded-full shadow-lg animate-pulse">
+                <FaLock className="text-yellow-300 text-2xl" />
+                <span className="text-3xl md:text-4xl font-bold text-yellow-300 drop-shadow">{count}</span>
+                <span className="text-white text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
+              </div>
             </div>
           </motion.div>
 

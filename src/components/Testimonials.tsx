@@ -38,6 +38,8 @@ export default function Testimonials() {
     // eslint-disable-next-line
   }, []);
 
+  const visible = shuffled.slice(0, 3);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -57,7 +59,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {shuffled.map((testimonial, index) => (
+          {visible.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={item}
