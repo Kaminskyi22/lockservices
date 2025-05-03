@@ -75,7 +75,7 @@ const Contact = () => {
                 <FaPhone className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Телефон</h3>
+                <h3 className="font-semibold text-lg text-black">Телефон</h3>
                 <a href={`tel:${messages.contact.phone}`} className="text-blue-600 hover:text-blue-700">
                   {messages.contact.phone}
                 </a>
@@ -87,7 +87,7 @@ const Contact = () => {
                 <FaEnvelope className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Email</h3>
+                <h3 className="font-semibold text-lg text-black">Email</h3>
                 <a href={`mailto:${messages.contact.email}`} className="text-blue-600 hover:text-blue-700">
                   {messages.contact.email}
                 </a>
@@ -99,7 +99,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Адреса</h3>
+                <h3 className="font-semibold text-lg text-black">Адреса</h3>
                 <p>{messages.contact.address}</p>
               </div>
             </div>

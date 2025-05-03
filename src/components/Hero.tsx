@@ -101,7 +101,7 @@ export default function Hero() {
       </div>
 
       {/* Контент */}
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-20 relative" style={{paddingBottom: 'max(2rem, env(safe-area-inset-bottom))'}}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
