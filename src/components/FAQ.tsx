@@ -12,9 +12,9 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-2 md:px-4">
+    <section id="faq" className="py-20 px-2 md:px-4">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto bg-white/80 shadow-xl rounded-2xl p-4 md:p-8">
+        <div className="max-w-3xl mx-auto bg-white/95 shadow-xl rounded-2xl p-4 md:p-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
             {messages.faq.title}
           </h2>
@@ -26,7 +26,7 @@ export default function FAQ() {
                   onClick={() => setOpen(open === idx ? null : idx)}
                   aria-expanded={open === idx}
                 >
-                  <span>{item.question}</span>
+                  <h3 className="text-lg font-semibold">{item.question}</h3>
                   <FaChevronDown className={`ml-2 transition-transform ${open === idx ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence initial={false}>
@@ -40,7 +40,7 @@ export default function FAQ() {
                       className="relative px-0"
                     >
                       <div className="absolute left-0 top-0 h-full w-1 bg-blue-500 rounded-r" />
-                      <div className="pl-6 pr-6 pb-4 pt-2 bg-blue-50 text-gray-800">
+                      <div className="pl-6 pr-6 pb-4 pt-2 bg-blue-100 text-gray-800">
                         <motion.div
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}

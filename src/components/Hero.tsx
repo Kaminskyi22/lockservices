@@ -53,8 +53,8 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Основний фон */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500 to-blue-900">
-        <div className="absolute left-1/4 top-1/4 w-1/2 h-1/3 bg-blue-400/30 rounded-full blur-3xl" />
-        <div className="absolute right-0 bottom-0 w-1/3 h-1/4 bg-blue-200/20 rounded-full blur-2xl" />
+        <div className="absolute left-1/4 top-1/4 w-1/2 h-1/3 bg-blue-400/60 rounded-full blur-3xl" />
+        <div className="absolute right-0 bottom-0 w-1/3 h-1/4 bg-blue-200/40 rounded-full blur-2xl" />
       </div>
       
       {/* Анімовані іконки */}
@@ -117,17 +117,21 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mb-8"
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl bg-clip-text" style={{textShadow: '0 4px 24px rgba(0,0,0,0.5)'}}>
+            <span
+              className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl bg-clip-text"
+              style={{textShadow: '0 4px 24px rgba(0,0,0,0.5)'}}
+              aria-label="LockService логотип"
+            >
               Lock
               <span className="text-blue-200 drop-shadow-2xl">Service</span>
-            </h2>
+            </span>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
             <div className="mt-6 flex flex-col items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex items-center gap-2 bg-white/70 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
+                className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
               >
                 <FaLock className="text-blue-600 text-2xl drop-shadow" />
                 <span className="text-3xl md:text-4xl font-bold text-blue-900 drop-shadow">{count}</span>
@@ -157,6 +161,9 @@ export default function Hero() {
           <p className="text-lg mb-12 max-w-2xl mx-auto text-gray-300">
             {messages.hero.description}
           </p>
+          <div className="text-center mb-8">
+            <a href="#services" className="text-blue-200 underline hover:text-white font-semibold transition">Детальніше про послуги</a>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch px-2 sm:px-0 mt-6">
             <motion.a
@@ -166,10 +173,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" />
+              <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" aria-label="Телефон" />
               <span className="relative z-10 whitespace-nowrap drop-shadow">{messages.contact.phone}</span>
             </motion.a>
 
@@ -182,10 +189,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" />
+              <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" aria-label="Telegram" />
               <span className="relative z-10 whitespace-nowrap drop-shadow">Швидка допомога в Telegram</span>
             </motion.a>
           </div>

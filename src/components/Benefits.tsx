@@ -30,7 +30,7 @@ export default function Benefits() {
   const { messages } = useTranslation();
 
   return (
-    <section className="py-20 bg-white">
+    <section id="benefits" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -57,8 +57,8 @@ export default function Benefits() {
                 variants={item}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <Icon className="text-4xl text-blue-600" />
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <Icon className="text-4xl text-blue-600" aria-label={benefit.title} />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-black">
                   {benefit.title}
@@ -70,6 +70,9 @@ export default function Benefits() {
             );
           })}
         </motion.div>
+        <div className="text-center mt-8">
+          <a href="#faq" className="text-blue-600 hover:underline font-semibold transition">Маєте питання? Дивіться відповіді у розділі FAQ</a>
+        </div>
       </div>
     </section>
   );

@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,11 +71,11 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
                 <FaPhone className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-black">Телефон</h3>
+                <h3 className="font-semibold text-lg text-black" aria-label="Телефон">Телефон</h3>
                 <a href={`tel:${messages.contact.phone}`} className="text-blue-600 hover:text-blue-700">
                   {messages.contact.phone}
                 </a>
@@ -83,11 +83,11 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
                 <FaEnvelope className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-black">Email</h3>
+                <h3 className="font-semibold text-lg text-black" aria-label="Email">Email</h3>
                 <a href={`mailto:${messages.contact.email}`} className="text-blue-600 hover:text-blue-700">
                   {messages.contact.email}
                 </a>
@@ -95,11 +95,11 @@ const Contact = () => {
             </div>
 
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
                 <FaMapMarkerAlt className="text-blue-600 text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg text-black">Адреса</h3>
+                <h3 className="font-semibold text-lg text-black" aria-label="Адреса">Адреса</h3>
                 <p className="text-black">{messages.contact.address}</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gray-50 rounded-xl p-8"
+            className="bg-white/95 rounded-xl p-8"
           >
             <div className="flex justify-center mb-4">
               <motion.div
@@ -120,9 +120,7 @@ const Contact = () => {
                 {unlocked ? <FaLockOpen /> : <FaLock />}
               </motion.div>
             </div>
-            <h3 className="text-2xl font-semibold mb-6 text-black">
-              {messages.contact.form.title}
-            </h3>
+            <h3 className="text-2xl font-semibold mb-6 text-black" aria-label="Форма зворотного зв'язку">{messages.contact.form.title}</h3>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>

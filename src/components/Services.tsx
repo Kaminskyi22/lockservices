@@ -30,7 +30,7 @@ export default function Services() {
   const { messages } = useTranslation();
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function Services() {
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col items-center"
               >
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Icon className="text-3xl text-blue-600" />
+                  <Icon className="text-3xl text-blue-600" aria-label={service.title} />
                 </div>
                 <h3 className="text-xl font-semibold text-center mb-3 text-gray-900">
                   {service.title}

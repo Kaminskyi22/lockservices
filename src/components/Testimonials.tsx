@@ -41,7 +41,7 @@ export default function Testimonials() {
   const visible = shuffled.slice(0, 3);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -63,19 +63,19 @@ export default function Testimonials() {
             <motion.div
               key={index}
               variants={item}
-              className="bg-white rounded-xl p-6 shadow-lg"
+              className="bg-white/95 rounded-xl p-6 shadow-lg"
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
                   <span className="text-xl font-semibold text-blue-600">
                     {testimonial.name[0]}
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">{testimonial.name}</h3>
+                  <h3 className="font-semibold text-black text-lg">{testimonial.name}</h3>
                   <div className="flex text-yellow-400">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <FaStar key={i} />
+                      <FaStar key={i} aria-label={`Зірка ${i + 1} з ${testimonial.rating}`} />
                     ))}
                   </div>
                 </div>
@@ -84,6 +84,9 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </motion.div>
+        <div className="text-center mt-8">
+          <a href="#contact" className="text-blue-600 hover:underline font-semibold transition">Залиште свій відгук або зв'яжіться з нами</a>
+        </div>
       </div>
     </section>
   );
