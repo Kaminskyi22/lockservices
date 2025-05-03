@@ -49,7 +49,10 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Основний фон */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-700 via-blue-500 to-blue-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500 to-blue-900">
+        <div className="absolute left-1/4 top-1/4 w-1/2 h-1/3 bg-blue-400/30 rounded-full blur-3xl" />
+        <div className="absolute right-0 bottom-0 w-1/3 h-1/4 bg-blue-200/20 rounded-full blur-2xl" />
+      </div>
       
       {/* Анімовані іконки */}
       {floatingIcons.map(({ Icon, x, y, delay }, index) => (
@@ -117,11 +120,16 @@ export default function Hero() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
             <div className="mt-6 flex flex-col items-center justify-center">
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-blue-300 animate-pulse">
-                <FaLock className="text-blue-600 text-2xl" />
-                <span className="text-3xl md:text-4xl font-bold text-blue-700 drop-shadow">{count}</span>
-                <span className="text-blue-700 text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex items-center gap-2 bg-white/30 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
+              >
+                <FaLock className="text-white text-2xl drop-shadow" />
+                <span className="text-3xl md:text-4xl font-bold text-white drop-shadow">{count}</span>
+                <span className="text-white text-lg md:text-xl font-semibold ml-2 drop-shadow">відкритих замків</span>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -150,26 +158,32 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch px-2 sm:px-0 mt-6">
             <motion.a
               href={`tel:${messages.contact.phone}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow-md border border-blue-300 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/30 backdrop-blur-md text-white font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/40 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600" />
-              <span className="relative z-10 whitespace-nowrap">{messages.contact.phone}</span>
+              <FaPhone className="text-lg sm:text-xl relative z-10 text-white drop-shadow" />
+              <span className="relative z-10 whitespace-nowrap drop-shadow">{messages.contact.phone}</span>
             </motion.a>
 
             <motion.a
               href="https://t.me/lockservice33000_bot"
               target="_blank"
               rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow-md border border-blue-300 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/30 backdrop-blur-md text-white font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/40 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600" />
-              <span className="relative z-10 whitespace-nowrap">Швидка допомога в Telegram</span>
+              <FaTelegram className="text-lg sm:text-xl relative z-10 text-white drop-shadow" />
+              <span className="relative z-10 whitespace-nowrap drop-shadow">Швидка допомога в Telegram</span>
             </motion.a>
           </div>
         </motion.div>
