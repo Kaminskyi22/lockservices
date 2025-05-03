@@ -117,10 +117,10 @@ export default function Hero() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
             <div className="mt-6 flex flex-col items-center justify-center">
-              <div className="flex items-center gap-2 bg-white/10 px-6 py-3 rounded-full shadow-lg animate-pulse">
+              <div className="flex items-center gap-2 bg-white/70 px-6 py-3 rounded-full shadow-lg animate-pulse">
                 <FaLock className="text-yellow-300 text-2xl" />
                 <span className="text-3xl md:text-4xl font-bold text-yellow-300 drop-shadow">{count}</span>
-                <span className="text-white text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
+                <span className="text-black text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
               </div>
             </div>
           </motion.div>
@@ -147,14 +147,15 @@ export default function Hero() {
             {messages.hero.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-stretch px-2 sm:px-0" style={{paddingBottom: 'env(safe-area-inset-bottom)'}}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-stretch px-2 sm:px-0">
             <motion.a
               href={`tel:${messages.contact.phone}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-full text-base sm:text-lg transition-colors shadow-lg relative overflow-hidden group min-w-0"
+              style={{ minWidth: 0 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/30 to-blue-500/0 group-hover:translate-x-full transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-blue-500/30 to-blue-500/10 group-hover:translate-x-full transition-transform duration-500" />
               <FaPhone className="text-lg sm:text-xl relative z-10" />
               <span className="relative z-10 whitespace-nowrap">{messages.contact.phone}</span>
             </motion.a>
@@ -166,8 +167,9 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0088cc] hover:bg-[#0077aa] text-white font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-full text-base sm:text-lg transition-colors shadow-lg relative overflow-hidden group min-w-0"
+              style={{ minWidth: 0 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0088cc]/0 via-[#0088cc]/30 to-[#0088cc]/0 group-hover:translate-x-full transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0088cc]/10 via-[#0088cc]/30 to-[#0088cc]/10 group-hover:translate-x-full transition-transform duration-500" />
               <FaTelegram className="text-lg sm:text-xl relative z-10" />
               <span className="relative z-10 whitespace-nowrap">Швидка допомога в Telegram</span>
             </motion.a>
