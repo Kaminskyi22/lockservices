@@ -85,7 +85,7 @@ export default function Testimonials() {
           ))}
         </motion.div>
         <div className="text-center mt-8">
-          <a href="#contact" className="text-blue-600 hover:underline font-semibold transition">Залиште свій відгук або зв'яжіться з нами</a>
+          <a href="#contact" className="text-blue-600 hover:underline font-semibold transition">Залиште свій відгук або зв&apos;яжіться з нами</a>
         </div>
       </div>
     </section>

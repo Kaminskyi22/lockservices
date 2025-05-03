@@ -1,13 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/contexts/TranslationContext';
 import { FaHome, FaLock } from 'react-icons/fa';
 import Link from 'next/link';
 
 export default function NotFound() {
-  const { messages } = useTranslation();
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-800 via-blue-500 to-blue-900">
       <div className="text-center">
@@ -68,7 +65,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-6 rounded-lg transition-all hover:bg-white/30"
           >
             <FaLock className="text-lg" />
-            Зв'язатися з нами
+            Зв&apos;язатися з нами
           </Link>
         </motion.div>
       </div>
