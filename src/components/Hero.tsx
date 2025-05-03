@@ -151,16 +151,16 @@ export default function Hero() {
             {messages.hero.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-stretch px-2 sm:px-0" style={{paddingBottom: 'env(safe-area-inset-bottom)'}}>
             <motion.a
               href={`tel:${messages.contact.phone}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-colors shadow-lg relative overflow-hidden group"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-full text-base sm:text-lg transition-colors shadow-lg relative overflow-hidden group min-w-0"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/30 to-blue-500/0 group-hover:translate-x-full transition-transform duration-500" />
-              <FaPhone className="text-xl relative z-10" />
-              <span className="relative z-10">{messages.contact.phone}</span>
+              <FaPhone className="text-lg sm:text-xl relative z-10" />
+              <span className="relative z-10 whitespace-nowrap">{messages.contact.phone}</span>
             </motion.a>
 
             <motion.a
@@ -169,11 +169,11 @@ export default function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-[#0088cc] hover:bg-[#0077aa] text-white font-semibold py-4 px-8 rounded-full text-lg transition-colors shadow-lg relative overflow-hidden group"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0088cc] hover:bg-[#0077aa] text-white font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-full text-base sm:text-lg transition-colors shadow-lg relative overflow-hidden group min-w-0"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#0088cc]/0 via-[#0088cc]/30 to-[#0088cc]/0 group-hover:translate-x-full transition-transform duration-500" />
-              <FaTelegram className="text-xl relative z-10" />
-              <span className="relative z-10">Швидка допомога в Telegram</span>
+              <FaTelegram className="text-lg sm:text-xl relative z-10" />
+              <span className="relative z-10 whitespace-nowrap">Швидка допомога в Telegram</span>
             </motion.a>
           </div>
         </motion.div>
