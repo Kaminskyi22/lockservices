@@ -43,8 +43,16 @@ export default function Navigation() {
     }
   };
 
-  function getMessage(messages: any, path: string) {
-    return path.split('.').reduce((o, i) => o?.[i], messages) as string;
+  function getMessage(messages: Record<string, unknown>, path: string) {
+    return path.split('.').reduce<unknown>(
+      (o: unknown, i: string) => {
+        if (o && typeof o === 'object' && i in o) {
+          return (o as Record<string, unknown>)[i];
+        }
+        return undefined;
+      },
+      messages
+    ) as string;
   }
 
   return (
