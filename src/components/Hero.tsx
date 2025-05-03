@@ -49,7 +49,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Основний фон */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-600 to-blue-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-700 via-blue-500 to-blue-900" />
       
       {/* Анімовані іконки */}
       {floatingIcons.map(({ Icon, x, y, delay }, index) => (
@@ -117,10 +117,10 @@ export default function Hero() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
             <div className="mt-6 flex flex-col items-center justify-center">
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow animate-pulse">
-                <FaLock className="text-blue-500 text-2xl" />
-                <span className="text-3xl md:text-4xl font-bold text-black drop-shadow">{count}</span>
-                <span className="text-black text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-blue-300 animate-pulse">
+                <FaLock className="text-blue-600 text-2xl" />
+                <span className="text-3xl md:text-4xl font-bold text-blue-700 drop-shadow">{count}</span>
+                <span className="text-blue-700 text-lg md:text-xl font-semibold ml-2">відкритих замків</span>
               </div>
             </div>
           </motion.div>
@@ -147,15 +147,15 @@ export default function Hero() {
             {messages.hero.description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center items-stretch px-2 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch px-2 sm:px-0 mt-6">
             <motion.a
               href={`tel:${messages.contact.phone}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-100 text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow relative overflow-hidden group min-w-0 border border-blue-200"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow-md border border-blue-300 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaPhone className="text-lg sm:text-xl relative z-10" />
+              <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600" />
               <span className="relative z-10 whitespace-nowrap">{messages.contact.phone}</span>
             </motion.a>
 
@@ -165,10 +165,10 @@ export default function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-100 text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow relative overflow-hidden group min-w-0 border border-blue-200"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-colors shadow-md border border-blue-300 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaTelegram className="text-lg sm:text-xl relative z-10" />
+              <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600" />
               <span className="relative z-10 whitespace-nowrap">Швидка допомога в Telegram</span>
             </motion.a>
           </div>
