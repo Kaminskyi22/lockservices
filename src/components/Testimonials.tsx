@@ -72,7 +72,7 @@ export default function Testimonials() {
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-semibold">{testimonial.name}</h3>
+                  <h3 className="font-semibold text-black">{testimonial.name}</h3>
                   <div className="flex text-yellow-400">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <FaStar key={i} />
