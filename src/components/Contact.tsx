@@ -100,7 +100,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-black">Адреса</h3>
-                <p>{messages.contact.address}</p>
+                <p className="text-black">{messages.contact.address}</p>
               </div>
             </div>
           </motion.div>
@@ -120,7 +120,7 @@ const Contact = () => {
                 {unlocked ? <FaLockOpen /> : <FaLock />}
               </motion.div>
             </div>
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-2xl font-semibold mb-6 text-black">
               {messages.contact.form.title}
             </h3>
             
