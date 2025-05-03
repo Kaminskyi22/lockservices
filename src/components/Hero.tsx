@@ -9,9 +9,6 @@ const floatingIcons = [
   { Icon: FaKey, x: '20%', y: '20%', delay: 0 },
   { Icon: FaLock, x: '80%', y: '30%', delay: 0.5 },
   { Icon: FaShieldAlt, x: '15%', y: '70%', delay: 1 },
-  { Icon: FaKey, x: '70%', y: '80%', delay: 1.5 },
-  { Icon: FaLock, x: '40%', y: '25%', delay: 2 },
-  { Icon: FaShieldAlt, x: '85%', y: '60%', delay: 2.5 },
 ];
 
 const START_COUNT = 107; // початкове значення
@@ -59,15 +56,14 @@ export default function Hero() {
         <motion.div
           key={index}
           className="absolute text-blue-500/20 pointer-events-none"
-          style={{ left: x, top: y }}
-          initial={{ opacity: 0, scale: 0 }}
+          style={{ left: x, top: y, willChange: 'transform, opacity' }}
+          initial={{ opacity: 0, y: 0 }}
           animate={{ 
             opacity: [0.2, 0.5, 0.2],
-            scale: [1, 1.2, 1],
-            y: ["0%", "-20%", "0%"]
+            y: [0, -20, 0]
           }}
           transition={{
-            duration: 4,
+            duration: 6,
             delay,
             repeat: Infinity,
             ease: "easeInOut"
@@ -84,16 +80,16 @@ export default function Hero() {
           initial={{ backgroundPosition: '0% 0%' }}
           animate={{ backgroundPosition: '100% 100%' }}
           transition={{
-            duration: 10,
+            duration: 12,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "linear"
           }}
           style={{
             background: `
-              radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 30%),
-              radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 30%),
-              radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)
+              radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.07) 0%, transparent 30%),
+              radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.07) 0%, transparent 30%),
+              radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.07) 0%, transparent 50%)
             `,
             backgroundSize: '200% 200%'
           }}
