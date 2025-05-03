@@ -9,6 +9,9 @@ const floatingIcons = [
   { Icon: FaKey, x: '20%', y: '20%', delay: 0 },
   { Icon: FaLock, x: '80%', y: '30%', delay: 0.5 },
   { Icon: FaShieldAlt, x: '15%', y: '70%', delay: 1 },
+  { Icon: FaKey, x: '70%', y: '80%', delay: 1.5 },
+  { Icon: FaLock, x: '40%', y: '25%', delay: 2 },
+  { Icon: FaShieldAlt, x: '85%', y: '60%', delay: 2.5 },
 ];
 
 const START_COUNT = 107; // початкове значення
@@ -58,7 +61,7 @@ export default function Hero() {
       {floatingIcons.map(({ Icon, x, y, delay }, index) => (
         <motion.div
           key={index}
-          className="absolute text-blue-500/20 pointer-events-none"
+          className="absolute text-white/10 pointer-events-none"
           style={{ left: x, top: y, willChange: 'transform, opacity' }}
           initial={{ opacity: 0, y: 0 }}
           animate={{ 
@@ -72,7 +75,7 @@ export default function Hero() {
             ease: "easeInOut"
           }}
         >
-          <Icon className="text-6xl" />
+          <Icon className="text-7xl drop-shadow-xl" />
         </motion.div>
       ))}
 
@@ -114,9 +117,9 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mb-8"
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl bg-clip-text" style={{textShadow: '0 4px 24px rgba(0,0,0,0.5)'}}>
               Lock
-              <span className="text-white">Service</span>
+              <span className="text-blue-200 drop-shadow-2xl">Service</span>
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
             <div className="mt-6 flex flex-col items-center justify-center">
@@ -124,11 +127,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex items-center gap-2 bg-white/30 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
+                className="flex items-center gap-2 bg-white/70 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
               >
-                <FaLock className="text-white text-2xl drop-shadow" />
-                <span className="text-3xl md:text-4xl font-bold text-white drop-shadow">{count}</span>
-                <span className="text-white text-lg md:text-xl font-semibold ml-2 drop-shadow">відкритих замків</span>
+                <FaLock className="text-blue-600 text-2xl drop-shadow" />
+                <span className="text-3xl md:text-4xl font-bold text-blue-900 drop-shadow">{count}</span>
+                <span className="text-blue-900 text-lg md:text-xl font-semibold ml-2 drop-shadow">відкритих замків</span>
               </motion.div>
             </div>
           </motion.div>
@@ -163,10 +166,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/30 backdrop-blur-md text-white font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/40 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaPhone className="text-lg sm:text-xl relative z-10 text-white drop-shadow" />
+              <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" />
               <span className="relative z-10 whitespace-nowrap drop-shadow">{messages.contact.phone}</span>
             </motion.a>
 
@@ -179,10 +182,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/30 backdrop-blur-md text-white font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/40 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
-              <FaTelegram className="text-lg sm:text-xl relative z-10 text-white drop-shadow" />
+              <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" />
               <span className="relative z-10 whitespace-nowrap drop-shadow">Швидка допомога в Telegram</span>
             </motion.a>
           </div>
