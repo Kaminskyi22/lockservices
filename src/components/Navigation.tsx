@@ -43,6 +43,10 @@ export default function Navigation() {
     }
   };
 
+  function getMessage(messages: any, path: string) {
+    return path.split('.').reduce((o, i) => o?.[i], messages) as string;
+  }
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-4">
@@ -59,7 +63,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {messages[label as keyof typeof messages]}
+              {getMessage(messages, label)}
             </motion.button>
           ))}
         </div>
