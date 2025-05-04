@@ -4,7 +4,7 @@ import "./globals.css";
 import { TranslationProvider } from "@/providers/TranslationProvider";
 import Analytics from '@/components/Analytics';
 import UptimeStatus from '@/components/UptimeStatus';
-import FeedbackForm from '@/components/FeedbackForm';
+// import FeedbackForm from '@/components/FeedbackForm';
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -153,7 +153,7 @@ export default function RootLayout({
         </TranslationProvider>
         <Analytics />
         <UptimeStatus />
-        <FeedbackForm />
+        {/* <FeedbackForm /> */}
       </body>
     </html>
   );
