@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { TranslationProvider } from "@/providers/TranslationProvider";
+import Analytics from '@/components/Analytics';
+import UptimeStatus from '@/components/UptimeStatus';
+import FeedbackForm from '@/components/FeedbackForm';
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -9,6 +12,15 @@ export const metadata: Metadata = {
   title: "Відкриття замків Рівне — LockService, аварійне відкриття дверей 24/7",
   description: "Професійне відкриття замків у Рівному та області. Швидко, цілодобово, без пошкоджень. Телефонуйте: +380 93 285 14 11",
   keywords: "відкриття замків Рівне, аварійне відкриття дверей, майстер замків Рівне, цілодобово, швидко, доступно, відкриття авто, відкриття сейфів, замки Рівне",
+  authors: [{ name: 'LockService' }],
+  creator: 'LockService',
+  publisher: 'LockService',
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+  metadataBase: new URL('https://lockservice.in'),
   alternates: {
     canonical: "https://lockservice.in/"
   },
@@ -25,9 +37,42 @@ export const metadata: Metadata = {
     statusBarStyle: 'black-translucent',
     title: 'LockService Рівне'
   },
-  formatDetection: {
-    telephone: false
-  }
+  openGraph: {
+    title: 'LockService - Професійні послуги відкриття замків',
+    description: 'Швидке та професійне відкриття замків у Львові. 24/7. Гарантія якості. Доступні ціни.',
+    url: 'https://lockservice.in',
+    siteName: 'LockService',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'LockService - Професійні послуги відкриття замків',
+      },
+    ],
+    locale: 'uk_UA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LockService - Професійні послуги відкриття замків',
+    description: 'Швидке та професійне відкриття замків у Львові. 24/7. Гарантія якості. Доступні ціни.',
+    images: ['/twitter-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
 };
 
 export default function RootLayout({
@@ -106,6 +151,9 @@ export default function RootLayout({
         <TranslationProvider>
           {children}
         </TranslationProvider>
+        <Analytics />
+        <UptimeStatus />
+        <FeedbackForm />
       </body>
     </html>
   );
