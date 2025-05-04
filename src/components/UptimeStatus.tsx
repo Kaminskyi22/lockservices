@@ -29,7 +29,7 @@ export default function UptimeStatus() {
           setStatus(monitor.status === 2 ? 'up' : 'down');
           setUptime(monitor.alltimeuptimeratio);
         }
-      } catch (_error) {
+      } catch {
         setStatus('down');
       }
     };

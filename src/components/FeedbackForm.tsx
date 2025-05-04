@@ -36,7 +36,7 @@ export default function FeedbackForm() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (_error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
