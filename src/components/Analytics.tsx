@@ -5,20 +5,20 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    gtag: any;
-    fbq: any;
+    gtag: (...args: unknown[]) => void;
+    fbq: (...args: unknown[]) => void;
   }
 }
 
 export default function Analytics() {
   useEffect(() => {
     // Google Analytics
-    window.gtag = window.gtag || function() { (window.gtag.q = window.gtag.q || []).push(arguments); };
+    window.gtag = window.gtag || function(...args) { (window.gtag.q = window.gtag.q || []).push(args); };
     window.gtag('js', new Date());
     window.gtag('config', process.env.NEXT_PUBLIC_GA_ID);
 
     // Meta Pixel
-    window.fbq = window.fbq || function() { (window.fbq.q = window.fbq.q || []).push(arguments); };
+    window.fbq = window.fbq || function(...args) { (window.fbq.q = window.fbq.q || []).push(args); };
     window.fbq('init', process.env.NEXT_PUBLIC_FB_PIXEL_ID);
     window.fbq('track', 'PageView');
   }, []);

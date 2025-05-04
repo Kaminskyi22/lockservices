@@ -36,7 +36,7 @@ export default function FeedbackForm() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -46,17 +46,17 @@ export default function FeedbackForm() {
   return (
     <div className="fixed bottom-4 left-4 z-50">
       <div className="bg-white/90 backdrop-blur-md rounded-lg shadow-lg p-4 w-80">
-        <h3 className="text-lg font-semibold mb-4">Зворотній зв'язок</h3>
+        <h3 className="text-lg font-semibold mb-4">Зворотній зв&apos;язок</h3>
         
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Ім'я</label>
+            <label className="block text-sm font-medium mb-1">Ім&apos;я</label>
             <input
               {...register('name', { required: true })}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Ваше ім'я"
+              placeholder="Ваше ім&apos;я"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-1">Це поле обов'язкове</p>}
+            {errors.name && <p className="text-red-500 text-sm mt-1">Це поле обов&apos;язкове</p>}
           </div>
 
           <div>
@@ -92,7 +92,7 @@ export default function FeedbackForm() {
               rows={4}
               placeholder="Ваше повідомлення"
             />
-            {errors.message && <p className="text-red-500 text-sm mt-1">Це поле обов'язкове</p>}
+            {errors.message && <p className="text-red-500 text-sm mt-1">Це поле обов&apos;язкове</p>}
           </div>
 
           <button
