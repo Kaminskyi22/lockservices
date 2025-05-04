@@ -50,7 +50,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-0 pt-[max(24px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))]">
       {/* Основний фон */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-500 to-blue-900">
         <div className="absolute left-1/4 top-1/4 w-1/2 h-1/3 bg-blue-400/60 rounded-full blur-3xl" />
@@ -75,7 +75,7 @@ export default function Hero() {
             ease: "easeInOut"
           }}
         >
-          <Icon className="text-7xl drop-shadow-xl" />
+          <Icon className="text-6xl md:text-7xl drop-shadow-xl" />
         </motion.div>
       ))}
 
@@ -103,39 +103,39 @@ export default function Hero() {
       </div>
 
       {/* Контент */}
-      <div className="container mx-auto px-4 z-20 relative" style={{paddingBottom: 'max(2rem, env(safe-area-inset-bottom))'}}>
+      <div className="container mx-auto px-0 sm:px-4 z-20 relative flex flex-col items-center justify-center w-full max-w-2xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center relative"
+          className="text-center relative w-full"
         >
           {/* Логотип */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-8"
+            className="mb-6 sm:mb-8"
           >
             <span
-              className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl bg-clip-text"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-white drop-shadow-2xl bg-clip-text"
               style={{textShadow: '0 4px 24px rgba(0,0,0,0.5)'}}
               aria-label="LockService логотип"
             >
               Lock
               <span className="text-blue-200 drop-shadow-2xl">Service</span>
             </span>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
-            <div className="mt-6 flex flex-col items-center justify-center">
+            <div className="h-1 w-20 sm:w-24 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mt-2 rounded-full" />
+            <div className="mt-4 sm:mt-6 flex flex-col items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
+                className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-2xl border border-white/40 animate-pulse"
               >
-                <FaLock className="text-blue-600 text-2xl drop-shadow" />
-                <span className="text-3xl md:text-4xl font-bold text-blue-900 drop-shadow">{count}</span>
-                <span className="text-blue-900 text-lg md:text-xl font-semibold ml-2 drop-shadow">відкритих замків</span>
+                <FaLock className="text-blue-600 text-xl sm:text-2xl drop-shadow" />
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 drop-shadow">{count}</span>
+                <span className="text-blue-900 text-base sm:text-lg md:text-xl font-semibold ml-2 drop-shadow">відкритих замків</span>
               </motion.div>
             </div>
           </motion.div>
@@ -144,28 +144,28 @@ export default function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="w-24 h-24 mx-auto mb-8 relative"
+            className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-6 sm:mb-8 relative"
           >
             <div className="absolute inset-0 bg-blue-500 rounded-full opacity-20 animate-ping" />
             <div className="relative w-full h-full bg-blue-600 rounded-full flex items-center justify-center">
-              <FaLock className="text-4xl text-white" />
+              <FaLock className="text-3xl sm:text-4xl text-white" />
             </div>
           </motion.div>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4 text-white drop-shadow-lg">
             {messages.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-blue-200 drop-shadow-md">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-8 text-blue-200 drop-shadow-md">
             {messages.hero.subtitle}
           </p>
-          <p className="text-lg mb-12 max-w-2xl mx-auto text-gray-300">
+          <p className="text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto text-gray-300">
             {messages.hero.description}
           </p>
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 sm:mb-8">
             <a href="#services" className="text-blue-200 underline hover:text-white font-semibold transition">Детальніше про послуги</a>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch px-2 sm:px-0 mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch px-0 sm:px-2 mt-4 sm:mt-6 w-full">
             <motion.a
               href={`tel:${messages.contact.phone}`}
               initial={{ opacity: 0, y: 20 }}
@@ -173,7 +173,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-3 sm:py-5 px-2 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
               <FaPhone className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" aria-label="Телефон" />
@@ -189,7 +189,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-4 sm:py-5 px-4 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white/95 backdrop-blur-md text-blue-900 font-semibold py-3 sm:py-5 px-2 sm:px-10 rounded-full text-base sm:text-lg transition-all shadow-2xl border border-white/60 relative overflow-hidden group min-w-0"
               style={{ minWidth: 0 }}
             >
               <FaTelegram className="text-lg sm:text-xl relative z-10 text-blue-600 drop-shadow" aria-label="Telegram" />
