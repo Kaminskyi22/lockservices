@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { TranslationProvider } from "@/providers/TranslationProvider";
 import Analytics from '@/components/Analytics';
-import UptimeStatus from '@/components/UptimeStatus';
+// import UptimeStatus from '@/components/UptimeStatus';
 // import FeedbackForm from '@/components/FeedbackForm';
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
@@ -152,7 +152,7 @@ export default function RootLayout({
           {children}
         </TranslationProvider>
         <Analytics />
-        <UptimeStatus />
+        {/* <UptimeStatus /> */}
         {/* <FeedbackForm /> */}
       </body>
     </html>
