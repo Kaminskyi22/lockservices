@@ -3,10 +3,20 @@
 import Script from 'next/script';
 import { useEffect } from 'react';
 
+interface GtagFunction {
+  (...args: unknown[]): void;
+  q?: unknown[];
+}
+
+interface FbqFunction {
+  (...args: unknown[]): void;
+  q?: unknown[];
+}
+
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
-    fbq: (...args: unknown[]) => void;
+    gtag: GtagFunction;
+    fbq: FbqFunction;
   }
 }
 
