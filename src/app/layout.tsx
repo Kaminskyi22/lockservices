@@ -153,7 +153,6 @@ export default function RootLayout({
         </TranslationProvider>
         <Analytics />
         <UptimeStatus />
-        <FeedbackForm />
       </body>
     </html>
   );
